@@ -95,11 +95,10 @@ const MovieDetailHero = ({ movieId, movieData }: MovieDetailHeroProps) => {
             <p className="text-[12px]  text-white mb-5">{data?.overview}</p>
             <div className="max-w-[55%] lg:max-w-full grid grid-cols-4 gap-2">
               {data?.genres?.map((item: any, idx: number) => (
-                <Link className="w-full block" href={`/genre/${item.id}`} key={idx}>
                   <button className="bg-[#D8125B] w-full text-[12px] font-semibold p-2 rounded-full text-white">
                     {item?.name}
                   </button>
-                </Link>
+             
               ))}
             </div>
             <div>
