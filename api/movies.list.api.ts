@@ -48,12 +48,16 @@ export const fetchExploreMovie = async (pageParam: number) => {
 };
 
 export const fetchMoviesBySearchQuery = async (query: string) => {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=b74eef63e78ebd203560059a4c5742a7&query=${query}`
-  );
-  if (!response.ok) {
-    throw new Error("Failed to fetch search results");
+  try {
+    const { data } = await apiClient.get(`/search/movie?query=${query}`);
+    if (data) {
+      const { results } = data;
+      return results;
+    }
+  } catch (err: any) {
+    const {
+      response: { data },
+    } = err;
+    throw new Error(data.message);
   }
-  const data = await response.json();
-  return data.results;
 };
