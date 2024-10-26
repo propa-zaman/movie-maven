@@ -82,7 +82,7 @@ To deploy the app to Vercel:
 - Vercel will automatically deploy the app and provide you with a live link.
 
 ## Live Demo
-Check out the live demo at Live URL
+Check out the live demo at [Live URL](https://movie-maven-three.vercel.app/)
 
 ## API Endpoints Used
 - Popular Movies: https://api.themoviedb.org/3/movie/popular?api_key=YOUR_API_KEY
